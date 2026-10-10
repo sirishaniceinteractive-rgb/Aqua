@@ -1,0 +1,904 @@
+/* =========================================================================
+   ABOUT SECTION ("О КЛУБЕ")
+   ========================================================================= */
+.about-section {
+  position: relative;
+  padding: 8rem 0 6rem 0;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 50%, rgba(6, 58, 103, 0.45) 0%, transparent 60%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 5;
+}
+
+.about-fish-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winged-fish-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Underwater ambient backdrop glow behind the winged fish */
+.winged-fish-glow {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(39, 200, 245, 0.16) 0%, rgba(6, 58, 103, 0.25) 50%, transparent 75%);
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.winged-fish-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 25px rgba(77, 217, 237, 0.25));
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: wingedFishFloat 7s ease-in-out infinite alternate;
+}
+
+@keyframes wingedFishFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.2deg);
+  }
+  100% {
+    transform: translateY(6px) rotate(-1deg);
+  }
+}
+
+.about-content-col {
+  position: relative;
+  z-index: 5;
+}
+
+.heading-row-with-badge {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.since-badge {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--soft-lavender);
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.about-description {
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: #D3E4F6;
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+}
+
+/* Club Highlights / Metrics */
+.about-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.metric-card {
+  padding: 1.2rem 1.4rem;
+  background: rgba(6, 58, 103, 0.3);
+  border: 1px solid rgba(39, 200, 245, 0.2);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  border-color: var(--coral-pink);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(240, 93, 189, 0.15);
+}
+
+.metric-number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--electric-cyan);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* About Section Corner Coral / Anemone */
+.about-corner-coral {
+  position: absolute;
+  right: -20px;
+  bottom: -40px;
+  width: clamp(180px, 20vw, 320px);
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 0 25px rgba(240, 93, 189, 0.5));
+  opacity: 0.9;
+}
+
+/* =========================================================================
+   LOCATIONS SECTION ("ЛОКАЦИИ")
+   ========================================================================= */
+.locations-section {
+  position: relative;
+  padding: 8rem 0 10rem 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 40%, rgba(6, 58, 103, 0.5) 0%, transparent 65%);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 6;
+}
+
+.locations-content-col {
+  position: relative;
+}
+
+.locations-intro {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: #E2EDF8;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.locations-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.location-item-btn {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  background: rgba(6, 58, 103, 0.35);
+  border: 1px solid rgba(39, 200, 245, 0.2);
+  border-radius: 14px;
+  color: var(--white);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.location-item-btn:hover, .location-item-btn.active {
+  background: rgba(6, 58, 103, 0.65);
+  border-color: var(--electric-cyan);
+  box-shadow: 0 4px 20px rgba(39, 200, 245, 0.2);
+  transform: translateX(6px);
+}
+
+.location-name {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.location-bullet-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--coral-pink);
+  box-shadow: 0 0 10px var(--coral-pink);
+}
+
+.location-badge {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  background: rgba(39, 200, 245, 0.15);
+  color: var(--aqua);
+  border: 1px solid rgba(77, 217, 237, 0.3);
+}
+
+/* Two Orange Fish Container on Right */
+.locations-fish-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.two-orange-fish-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
+.two-orange-fish-img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(240, 93, 189, 0.35));
+  animation: swimHorizontalBob 8s ease-in-out infinite alternate;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes swimHorizontalBob {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(-12px, -8px) rotate(-1.5deg);
+  }
+  66% {
+    transform: translate(-6px, 10px) rotate(1deg);
+  }
+  100% {
+    transform: translate(10px, -4px) rotate(-0.5deg);
+  }
+}
+
+/* Individual Swimming Fish Track across Bottom */
+.swimming-fish-lane {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  height: 320px;
+  pointer-events: none;
+  z-index: 5;
+  overflow: visible;
+}
+
+.swimming-fish-single {
+  position: absolute;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+  animation: fishCrossScreen linear infinite;
+}
+
+@keyframes fishCrossScreen {
+  0% {
+    transform: translateX(115vw) translateY(0);
+  }
+  50% {
+    transform: translateX(50vw) translateY(calc(sin(var(--swim-seed, 0)) * 14px));
+  }
+  100% {
+    transform: translateX(-35vw) translateY(0);
+  }
+}
+
+/* Locations Bottom Panorama Coral Reef */
+.locations-bottom-reef-panorama {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: cover;
+  object-position: bottom;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0.95;
+  filter: drop-shadow(0 -10px 30px rgba(3, 19, 47, 0.8));
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 75%, transparent 100%);
+}
+
+/* =========================================================================
+   COURSES SECTION ("КУРСЫ")
+   ========================================================================= */
+.courses-section {
+  position: relative;
+  padding: 8rem 0;
+  background: radial-gradient(circle at 50% 20%, rgba(6, 58, 103, 0.4) 0%, var(--deep-navy) 75%);
+  z-index: 6;
+}
+
+.courses-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4rem auto;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.course-card {
+  position: relative;
+  background: rgba(6, 58, 103, 0.35);
+  border: 1px solid rgba(39, 200, 245, 0.28);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  visibility: visible;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--electric-cyan);
+  box-shadow: 0 16px 40px rgba(3, 19, 47, 0.8), 0 0 25px rgba(39, 200, 245, 0.25);
+}
+
+.course-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #084982 0%, #03132F 100%);
+}
+
+.course-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.course-card:hover .course-card-image {
+  transform: scale(1.08);
+}
+
+.course-card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(3, 19, 47, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  border: 1px solid var(--electric-cyan);
+  color: var(--aqua);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.course-card-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.course-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+
+.course-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.course-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+  font-size: 0.88rem;
+  color: #B5CCE5;
+}
+
+.course-btn {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border-radius: 30px;
+  background: rgba(39, 200, 245, 0.12);
+  border: 1px solid var(--electric-cyan);
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.course-card:hover .course-btn {
+  background: linear-gradient(135deg, #F05DBD 0%, #D43A9A 100%);
+  border-color: #F05DBD;
+  box-shadow: 0 4px 18px rgba(240, 93, 189, 0.45);
+}
+
+/* =========================================================================
+   EQUIPMENT & BASE SECTION ("НОМЕРА")
+   ========================================================================= */
+.equipment-section {
+  position: relative;
+  padding: 8rem 0;
+  background: radial-gradient(circle at 10% 40%, rgba(6, 58, 103, 0.35) 0%, transparent 60%);
+  z-index: 6;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.equipment-card {
+  background: rgba(6, 58, 103, 0.22);
+  border: 1px solid rgba(39, 200, 245, 0.18);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.35s ease;
+}
+
+.equipment-card:hover {
+  border-color: var(--electric-cyan);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(3, 19, 47, 0.7), 0 0 20px rgba(39, 200, 245, 0.18);
+}
+
+.equipment-img-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.equipment-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.equipment-card:hover .equipment-img {
+  transform: scale(1.06);
+}
+
+.equipment-content {
+  padding: 1.4rem;
+}
+
+.equipment-category {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--soft-lavender);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.equipment-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.equipment-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* =========================================================================
+   GALLERY SECTION
+   ========================================================================= */
+.gallery-section {
+  position: relative;
+  padding: 8rem 0;
+  z-index: 6;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 280px;
+  cursor: pointer;
+  border: 1px solid rgba(39, 200, 245, 0.2);
+}
+
+.gallery-item.span-2 {
+  grid-column: span 2;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(3, 19, 47, 0.85) 0%, rgba(3, 19, 47, 0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.08);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-caption {
+  font-size: 1.15rem;
+  font-family: var(--font-serif);
+  color: var(--white);
+}
+
+.gallery-location-tag {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--electric-cyan);
+  text-transform: uppercase;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 19, 47, 0.95);
+  backdrop-filter: blur(25px);
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(77, 217, 237, 0.3);
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+  color: var(--coral-pink);
+}
+
+/* =========================================================================
+   BOOKING SECTION ("ЗАПИСАТЬСЯ")
+   ========================================================================= */
+.booking-section {
+  position: relative;
+  padding: 8rem 0;
+  background: radial-gradient(circle at 50% 50%, rgba(6, 58, 103, 0.45) 0%, var(--deep-navy) 75%);
+  z-index: 6;
+}
+
+.booking-card-wrapper {
+  max-width: 840px;
+  margin: 0 auto;
+  background: rgba(6, 58, 103, 0.35);
+  border: 1px solid var(--glass-border-pink);
+  border-radius: 28px;
+  padding: 3.5rem 3rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(3, 19, 47, 0.9), 0 0 30px rgba(240, 93, 189, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-card-glow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 93, 189, 0.25) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.booking-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.booking-form-grid .full-span {
+  grid-column: span 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #D2E4F6;
+  text-transform: uppercase;
+}
+
+.form-input, .form-select, .form-textarea {
+  background: rgba(3, 19, 47, 0.7);
+  border: 1px solid rgba(39, 200, 245, 0.25);
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--electric-cyan);
+  box-shadow: 0 0 15px rgba(39, 200, 245, 0.3);
+  background: rgba(3, 19, 47, 0.9);
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 1.1rem;
+  background: linear-gradient(135deg, #F05DBD 0%, #D43A9A 100%);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 40px;
+  box-shadow: 0 8px 25px rgba(240, 93, 189, 0.45);
+  transition: all 0.35s ease;
+  margin-top: 1rem;
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 35px rgba(240, 93, 189, 0.7);
+}
+
+.form-disclaimer {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+.site-footer {
+  position: relative;
+  background: #020c1d;
+  border-top: 1px solid rgba(39, 200, 245, 0.15);
+  padding: 5rem 0 3rem 0;
+  z-index: 6;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-top: 1rem;
+  max-width: 320px;
+}
+
+.footer-col-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--electric-cyan);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  font-size: 0.9rem;
+  color: #B2C8DF;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--coral-pink);
+  transform: translateX(4px);
+}
+
+.footer-social-row {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(6, 58, 103, 0.4);
+  border: 1px solid rgba(39, 200, 245, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: var(--coral-pink);
+  border-color: var(--coral-pink);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(240, 93, 189, 0.4);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* =========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================= */
+@media (max-width: 1024px) {
+  .about-grid, .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .equipment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-grid, .equipment-grid, .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-item.span-2 {
+    grid-column: span 1;
+  }
+  .booking-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .booking-form-grid .full-span {
+    grid-column: span 1;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+  .booking-card-wrapper {
+    padding: 2.2rem 1.5rem;
+  }
+}
